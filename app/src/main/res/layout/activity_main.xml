@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/h1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgAdd"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:scaleX="0.65"
+            android:scaleY="0.65"
+            android:src="@drawable/ic_add" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/ciVpCityName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:ci_drawable="@drawable/ic_circle"
+            app:ci_drawable_unselected="@drawable/ic_circle"
+            app:ci_height="5dp"
+            app:ci_margin="5dp"
+            app:ci_orientation="horizontal"
+            app:ci_width="5dp" />
+
+        <ImageView
+            android:id="@+id/imgLocation"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:scaleX="0.65"
+            android:scaleY="0.65"
+            android:src="@drawable/ic_location"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imgUser"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:scaleX="0.65"
+            android:scaleY="0.65"
+            android:src="@drawable/ic_account" />
+
+    </RelativeLayout>
+
+    <AutoCompleteTextView
+        android:id="@+id/actvSearch"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:hint="City name"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/h1" />
+
+    <ImageView
+        android:id="@+id/imgSearch"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="@id/actvSearch"
+        app:layout_constraintEnd_toStartOf="@id/actvSearch" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vpCityName"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/actvSearch">
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.viewpager.widget.ViewPager>
+    <FrameLayout
+        android:id="@+id/container2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
